@@ -1,0 +1,43 @@
+package Quiz_1;
+
+import java.util.Scanner;
+
+public class QBStats {
+
+	public static void main(String[] args) {
+		
+		
+		int tds;
+		int yds;
+		int ints;
+		int cmps;
+		int atts;
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter touchdowns.");
+		tds = input.nextInt();
+		
+		System.out.println("Enter total yards.");
+		yds = input.nextInt();
+		
+		System.out.println("Enter interceptions.");
+		ints = input.nextInt();
+		
+		System.out.println("Enter completions.");
+		cmps = input.nextInt();
+		
+		System.out.println("Enter passes attempted.");
+		atts = input.nextInt();
+		
+		double a = (cmps/atts -0.3)*5;
+		double b = (yds/atts - 3)*0.25;
+		double c = (tds/atts)*20;
+		double d = 2.375 - (ints/atts)*25;
+		
+		double rating = ((a + b + c + d)/6) * 100;
+		
+		System.out.println("Passer rating is " + rating);
+	}
+
+}
